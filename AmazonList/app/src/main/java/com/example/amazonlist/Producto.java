@@ -2,16 +2,17 @@ package com.example.amazonlist;
 
 public class Producto {
 
-    private String nombre,proveedor,recibe,envio,urlFoto,otros,resenias,stock,fechaLLegada;
-    private Integer precio;
+    private String nombre,proveedor,recibe,envio,urlFoto,urlLogo,urlPrime,otros,resenias,stock,fechaLLegada, precio;
     private Float rate;
 
-    public Producto(String nombre, String proveedor, String recibe, String envio, String urlFoto, String otros, String resenias, String stock, String fechaLLegada, Integer precio, Float rate) {
+    public Producto(String nombre, String proveedor, String recibe, String envio, String urlFoto, String urlLogo, String urlPrime, String otros, String resenias, String stock, String fechaLLegada, String precio, Float rate) {
         this.nombre = nombre;
         this.proveedor = proveedor;
         this.recibe = recibe;
         this.envio = envio;
         this.urlFoto = urlFoto;
+        this.urlLogo = urlLogo;
+        this.urlPrime = urlPrime;
         this.otros = otros;
         this.resenias = resenias;
         this.stock = stock;
@@ -60,6 +61,22 @@ public class Producto {
         this.urlFoto = urlFoto;
     }
 
+    public String getUrlLogo() {
+        return urlLogo;
+    }
+
+    public void setUrlLogo(String urlLogo) {
+        this.urlLogo = urlLogo;
+    }
+
+    public String getUrlPrime() {
+        return urlPrime;
+    }
+
+    public void setUrlPrime(String urlPrime) {
+        this.urlPrime = urlPrime;
+    }
+
     public String getOtros() {
         return otros;
     }
@@ -92,11 +109,11 @@ public class Producto {
         this.fechaLLegada = fechaLLegada;
     }
 
-    public Integer getPrecio() {
+    public String getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Integer precio) {
+    public void setPrecio(String precio) {
         this.precio = precio;
     }
 

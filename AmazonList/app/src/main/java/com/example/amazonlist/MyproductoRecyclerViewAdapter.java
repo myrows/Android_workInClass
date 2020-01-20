@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.amazonlist.productoFragment.OnListFragmentInteractionListener;
@@ -31,7 +32,11 @@ public class MyproductoRecyclerViewAdapter extends RecyclerView.Adapter<Myproduc
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fragment_producto, parent, false);
+
+        ctx = parent.getContext();
+
         return new ViewHolder(view);
+
     }
 
     @Override
@@ -41,22 +46,32 @@ public class MyproductoRecyclerViewAdapter extends RecyclerView.Adapter<Myproduc
         holder.proveedor.setText(holder.objectProducto.getProveedor());
         holder.recibe.setText(holder.objectProducto.getRecibe());
         holder.envio.setText(holder.objectProducto.getEnvio());
-        holder.otros.setText(holder.objectProducto.getResenias());
+        holder.otros.setText(holder.objectProducto.getOtros());
         holder.resenias.setText(holder.objectProducto.getResenias());
         holder.precio.setText(holder.objectProducto.getPrecio());
         holder.rate.setRating(holder.objectProducto.getRate());
         holder.stock.setText(holder.objectProducto.getStock());
         holder.fechaLLegada.setText(holder.objectProducto.getFechaLLegada());
 
-        Glide.with(ctx).load(holder.objectProducto.getUrlFoto());
-
+        Glide
+                .with(ctx)
+                .load(holder.objectProducto.getUrlFoto())
+                .into(holder.fotoProducto);
+        Glide
+                .with(ctx)
+                .load(holder.objectProducto.getUrlLogo())
+                .into(holder.fotoLogo);
+        Glide
+                .with(ctx)
+                .load(holder.objectProducto.getUrlPrime())
+                .into(holder.fotoPrime);
+;
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (null != mListener) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.mItem);
+                    Toast.makeText(ctx, "Has seleccionado un elemento", Toast.LENGTH_SHORT).show();
+                    mListener.onListFragmentInteraction(holder.objectProducto);
                 }
             }
         });
@@ -73,12 +88,15 @@ public class MyproductoRecyclerViewAdapter extends RecyclerView.Adapter<Myproduc
         public final TextView proveedor;
         public final TextView recibe;
         public final TextView envio;
-        public final TextView urlFoto;
+        //public final TextView urlFoto;
         public final TextView otros;
         public final TextView resenias;
         public final TextView precio;
         public final RatingBar rate;
         public final ImageView fotoProducto;
+        public final ImageView fotoLogo;
+        public final ImageView fotoPrime;
+
         public final TextView stock;
         public final TextView fechaLLegada;
         public Producto objectProducto;
@@ -88,14 +106,19 @@ public class MyproductoRecyclerViewAdapter extends RecyclerView.Adapter<Myproduc
             mView = view;
             nombre = view.findViewById(R.id.textViewTitle);
             proveedor = view.findViewById(R.id.textViewProvider);
-            recibe = view.findViewById(R.id.textViewDelivery);
-            envio = view.findViewById(R.id.te)
+            recibe = view.findViewById(R.id.textViewRecibe);
+            envio = view.findViewById(R.id.textViewDelivery);
+            otros = view.findViewById(R.id.textViewOthers);
+            resenias = view.findViewById(R.id.textViewReviews);
+            precio = view.findViewById(R.id.textViewPrize);
+            rate = view.findViewById(R.id.ratingBar);
+            fotoProducto = view.findViewById(R.id.imageViewPreview);
+            stock = view.findViewById(R.id.textViewStock);
+            fechaLLegada = view.findViewById(R.id.textViewDate);
+            fotoLogo = view.findViewById(R.id.imageViewLogo);
+            fotoPrime = view.findViewById(R.id.imageViewPrime);
 
-        }
 
-        @Override
-        public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
         }
     }
 }

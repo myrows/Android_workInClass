@@ -71,11 +71,12 @@ public class productoFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
+
             listaProductos = new ArrayList<>();
-            listaProductos.add(new Producto("Auriculares","Amazon","Recibelo el","Envío GRATIS","https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/09/13/15683661028957.png","Ver otras variantes","(210)","disponible","miercoles 23 de Junio",23, 4.5f));
-            listaProductos.add(new Producto("Auriculares","Amazon","Recibelo el","Envío GRATIS","https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/09/13/15683661028957.png","Ver otras variantes","(210)","disponible","miercoles 23 de Junio",23, 4.5f));
-            listaProductos.add(new Producto("Auriculares","Amazon","Recibelo el","Envío GRATIS","https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/09/13/15683661028957.png","Ver otras variantes","(210)","disponible","miercoles 23 de Junio",23, 4.5f));
-            listaProductos.add(new Producto("Auriculares","Amazon","Recibelo el","Envío GRATIS","https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/09/13/15683661028957.png","Ver otras variantes","(210)","disponible","miercoles 23 de Junio",23, 4.5f));
+            listaProductos.add(new Producto("Alexa Echo","Amazon","Recibelo el","Envío GRATIS","https://images-na.ssl-images-amazon.com/images/I/61yI7vWa83L._SX679_.jpg", "https://caristaapp.files.wordpress.com/2018/06/amazon-choice.png?w=369&h=123", "https://www.scrappingparados.com/wp-content/uploads/2018/11/amazon-prime-suscribete.png","Ver otras variantes","(210)","disponible","miercoles 23 de Junio","EUR 99.99", 4f));
+            listaProductos.add(new Producto("Alexa Echo","Amazon","Recibelo el","Envío GRATIS","https://images-na.ssl-images-amazon.com/images/I/61yI7vWa83L._SX679_.jpg", "https://caristaapp.files.wordpress.com/2018/06/amazon-choice.png?w=369&h=123", "https://www.scrappingparados.com/wp-content/uploads/2018/11/amazon-prime-suscribete.png","Ver otras variantes","(210)","disponible","miercoles 23 de Junio","EUR 99.99", 4f));
+            listaProductos.add(new Producto("Alexa Echo","Amazon","Recibelo el","Envío GRATIS","https://images-na.ssl-images-amazon.com/images/I/61yI7vWa83L._SX679_.jpg", "https://caristaapp.files.wordpress.com/2018/06/amazon-choice.png?w=369&h=123", "https://www.scrappingparados.com/wp-content/uploads/2018/11/amazon-prime-suscribete.png","Ver otras variantes","(210)","disponible","miercoles 23 de Junio","EUR 99.99", 4f));
+            listaProductos.add(new Producto("Alexa Echo","Amazon","Recibelo el","Envío GRATIS","https://images-na.ssl-images-amazon.com/images/I/61yI7vWa83L._SX679_.jpg", "https://caristaapp.files.wordpress.com/2018/06/amazon-choice.png?w=369&h=123", "https://www.scrappingparados.com/wp-content/uploads/2018/11/amazon-prime-suscribete.png","Ver otras variantes","(210)","disponible","miercoles 23 de Junio","EUR 99.99", 4f));
 
             recyclerView.setAdapter(new MyproductoRecyclerViewAdapter(listaProductos, mListener));
         }
