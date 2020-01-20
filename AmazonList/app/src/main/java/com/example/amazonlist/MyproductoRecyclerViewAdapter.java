@@ -86,8 +86,11 @@ public class MyproductoRecyclerViewAdapter extends RecyclerView.Adapter<Myproduc
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.item_number);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            nombre = view.findViewById(R.id.textViewTitle);
+            proveedor = view.findViewById(R.id.textViewProvider);
+            recibe = view.findViewById(R.id.textViewDelivery);
+            envio = view.findViewById(R.id.te)
+
         }
 
         @Override

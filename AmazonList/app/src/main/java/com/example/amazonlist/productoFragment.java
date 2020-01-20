@@ -12,9 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.amazonlist.dummy.DummyContent;
-import com.example.amazonlist.dummy.DummyContent.DummyItem;
-
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,6 +22,8 @@ import java.util.List;
  * interface.
  */
 public class productoFragment extends Fragment {
+
+    List<Producto> listaProductos;
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -71,7 +71,13 @@ public class productoFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyproductoRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            listaProductos = new ArrayList<>();
+            listaProductos.add(new Producto("Auriculares","Amazon","Recibelo el","Envío GRATIS","https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/09/13/15683661028957.png","Ver otras variantes","(210)","disponible","miercoles 23 de Junio",23, 4.5f));
+            listaProductos.add(new Producto("Auriculares","Amazon","Recibelo el","Envío GRATIS","https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/09/13/15683661028957.png","Ver otras variantes","(210)","disponible","miercoles 23 de Junio",23, 4.5f));
+            listaProductos.add(new Producto("Auriculares","Amazon","Recibelo el","Envío GRATIS","https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/09/13/15683661028957.png","Ver otras variantes","(210)","disponible","miercoles 23 de Junio",23, 4.5f));
+            listaProductos.add(new Producto("Auriculares","Amazon","Recibelo el","Envío GRATIS","https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/09/13/15683661028957.png","Ver otras variantes","(210)","disponible","miercoles 23 de Junio",23, 4.5f));
+
+            recyclerView.setAdapter(new MyproductoRecyclerViewAdapter(listaProductos, mListener));
         }
         return view;
     }
@@ -106,6 +112,6 @@ public class productoFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(Producto item);
     }
 }
